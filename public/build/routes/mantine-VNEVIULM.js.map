@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["browser-route-module:/Users/yeesiang/testbase/remix-mantine/app/routes/mantine.jsx?browser", "../../../app/routes/mantine.jsx"],
+  "sourcesContent": ["export { default } from \"/Users/yeesiang/testbase/remix-mantine/app/routes/mantine.jsx\";", "export default function Mantine() {\n    return (\n      <>\n        <h1>Mantine</h1>\n      </>\n    );\n  }\n  "],
+  "mappings": ";;;;;;AAAA;;;ACAA;AAAe,mBAAmB;AAC9B,SACE,0DACE,oCAAC,MAAD,MAAI;AAAA;",
+  "names": []
+}

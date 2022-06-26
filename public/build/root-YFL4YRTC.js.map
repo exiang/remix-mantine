@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["browser-route-module:/Users/yeesiang/testbase/remix-mantine/app/root.jsx?browser", "../../app/root.jsx"],
+  "sourcesContent": ["export { default, meta } from \"/Users/yeesiang/testbase/remix-mantine/app/root.jsx\";", "import { MantineProvider } from '@mantine/core';\nimport { NotificationsProvider } from '@mantine/notifications';\n\nimport {\n  Links,\n  LiveReload,\n  Meta,\n  Outlet,\n  Scripts,\n  ScrollRestoration,\n} from \"@remix-run/react\";\n\nexport const meta = () => ({\n  charset: \"utf-8\",\n  title: \"New Remix App\",\n  viewport: \"width=device-width,initial-scale=1\",\n});\n\nexport default function App() {\n  return (\n    <MantineProvider>\n      <NotificationsProvider>\n      <html lang=\"en\">\n        <head>\n          <Meta />\n          <Links />\n        </head>\n        <body>\n          <Outlet />\n          <ScrollRestoration />\n          <Scripts />\n          <LiveReload />\n        </body>\n      </html>\n      </NotificationsProvider>\n    </MantineProvider>\n  );\n}\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;;;AAAA;;;ACAA;AAYO,IAAM,OAAO,MAAO;AAAA,EACzB,SAAS;AAAA,EACT,OAAO;AAAA,EACP,UAAU;AAAA;AAGG,eAAe;AAC5B,SACE,oCAAC,iBAAD,MACE,oCAAC,uBAAD,MACA,oCAAC,QAAD;AAAA,IAAM,MAAK;AAAA,KACT,oCAAC,QAAD,MACE,oCAAC,MAAD,OACA,oCAAC,OAAD,QAEF,oCAAC,QAAD,MACE,oCAAC,QAAD,OACA,oCAAC,mBAAD,OACA,oCAAC,SAAD,OACA,oCAAC,YAAD;AAAA;",
+  "names": []
+}
