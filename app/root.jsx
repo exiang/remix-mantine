@@ -1,6 +1,10 @@
-import { MantineProvider } from '@mantine/core';
+import {Link}  from "@remix-run/react";
+
+import { Container, MantineProvider, Button } from '@mantine/core';
 import { NotificationsProvider } from '@mantine/notifications';
 import { ModalsProvider } from '@mantine/modals';
+
+import {HeaderResponsive} from './components/HeaderResponsive/HeaderResponsive'
 
 import {
   Links,
@@ -19,21 +23,48 @@ export const meta = () => ({
 
 export default function App() {
   return (
-    <MantineProvider>
+    <Document>
+      <Layout>
+        <Outlet />
+      </Layout>
+    </Document>
+  );
+}
+
+function Document({children, title}){
+  return (
+    <MantineProvider theme={{ colorScheme: 'dark' }} withGlobalStyles withNormalizeCSS>
       <NotificationsProvider><ModalsProvider>
       <html lang="en">
         <head>
+          <title>{title}</title>
           <Meta />
           <Links />
         </head>
         <body>
-          <Outlet />
+          {children}
           <ScrollRestoration />
           <Scripts />
-          <LiveReload />
+          {process.env.NODE_ENV === 'development'?<LiveReload />:null}
         </body>
       </html>
       </ModalsProvider></NotificationsProvider>
     </MantineProvider>
-  );
+  )
+}
+
+function Layout({children})
+{
+  const links = [
+    { "link": "/mantine", "label": "Mantine" },
+  ];
+
+  const logo = <Link to="/"><Button variant="gradient" gradient={{ from: 'purple', to: 'red' }}>REMIX Kitchensink</Button></Link>
+
+  return (
+    <>
+    <HeaderResponsive links={links} logo={logo} mb={10}></HeaderResponsive>
+    <Container>{children}</Container>
+    </>
+  )
 }

@@ -1,4 +1,4 @@
-import { Text, Group, Button, Notification } from '@mantine/core';
+import { Title, Space, Text, Group, Button, Notification } from '@mantine/core';
 import { showNotification } from '@mantine/notifications';
 import { useModals } from '@mantine/modals';
 
@@ -20,17 +20,22 @@ export default function Mantine() {
     
     return (
       <>
-        <h1>Mantine</h1>
-        
-        <h2>Buttons</h2>
+        <Title order={1}>Mantine</Title>
+        <Space h="lg" />
+
+        <Title order={2}>Buttons</Title>
         <Button>Hello world!</Button>
         
-        <h2>Notifications</h2>
+        <Space h="lg" />
+        
+        <Title order={2}>Noitification</Title>
         <Notification title="We notify you that">
         You are now obligated to give a star to Mantine project on GitHub
         </Notification>
 
-        <h3>Show notification toast</h3>
+        <Space h="sm" />
+
+        <Title order={3}>Trigger Notification Toast</Title>
         <Button
             variant="outline"
             onClick={() =>
@@ -43,7 +48,9 @@ export default function Mantine() {
             Show notification
         </Button>
 
-        <h2>Modals</h2>
+        <Space h="lg" />
+
+        <Title order={2}>Modals</Title>
         <Button onClick={openConfirmModal}>Open confirm modal</Button>
       </>
     );

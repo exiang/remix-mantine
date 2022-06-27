@@ -1,32 +1,16 @@
+import {Link}  from "@remix-run/react";
+import { Title, List, Button, Space } from '@mantine/core';
+
 export default function Index() {
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
-      <h1>Welcome to Remix</h1>
-      <ul>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/blog"
-            rel="noreferrer"
-          >
-            15m Quickstart Blog Tutorial
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/jokes"
-            rel="noreferrer"
-          >
-            Deep Dive Jokes App Tutorial
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-            Remix Docs
-          </a>
-        </li>
-      </ul>
-    </div>
+    <>
+      <Title order={1}>Index</Title>
+      <Space h="lg" />
+
+      <List spacing="md" listStyleType="none">
+        <List.Item><Link to="/mantine"><Button size="xs">Mantine</Button></Link> Demo all mantine core components</List.Item>
+        <List.Item><Link to="/posts"><Button size="xs">Blog</Button></Link> Blog Demo</List.Item>
+      </List>
+    </>
   );
 }
