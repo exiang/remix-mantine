@@ -1,6 +1,6 @@
 import {Link}  from "@remix-run/react";
 
-import { Container, MantineProvider, Button } from '@mantine/core';
+import { Container, MantineProvider, Button, Title } from '@mantine/core';
 import { NotificationsProvider } from '@mantine/notifications';
 import { ModalsProvider } from '@mantine/modals';
 
@@ -67,4 +67,16 @@ function Layout({children})
     <Container>{children}</Container>
     </>
   )
+}
+
+// @ys: somehow this does not work with mantine
+export function ErrorBoundary({ error }) {
+  return (
+    <Document title="Error">
+      <h1>Error</h1>
+      <p>{error.message}</p>
+      <p>The stack trace is:</p>
+      <pre>{error.stack}</pre>
+    </Document>
+  );
 }

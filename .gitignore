@@ -16,3 +16,5 @@ soljson.js
 lerna-debug.log
 *~
 /tmp
+/prisma/*.db
+.env

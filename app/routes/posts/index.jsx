@@ -1,14 +1,16 @@
 import {Link, useLoaderData} from '@remix-run/react'
 
-import { Grid, Group, Title, List, Button, Space } from '@mantine/core';
+import { Grid, Group, Title, List, Button, Space, Text, Paper } from '@mantine/core';
 
-export const loader = () =>{
+import {db} from '~/utils/db.server'
+
+export const loader = async () =>{
     const data = {
-        posts: [
-            {id: 1, title: 'Post 1', body: 'This is a test post'},
-            {id: 2, title: 'Post 2', body: 'This is a test post'},
-            {id: 3, title: 'Post 3', body: 'This is a test post'},
-        ]
+        posts: await db.post.findMany({
+            take: 20, 
+            select: {id:true, title: true, createdAt: true},
+            orderBy: {createdAt: 'desc'}
+        })
     }
     return data
 }
@@ -33,13 +35,15 @@ function PostItems(){
 
         <Space h="lg" />
 
-        <List listStyleType="none">
+        <List spacing="md" listStyleType="none">
         {posts.map(post => (
             <List.Item key={post.id}>
+                <Paper shadow="lg" p="md" withBorder>
                 <Link to={post.id}>
                     <Title order={3}>{post.title}</Title>
                 </Link>
-                {post.body}
+                <Text>{new Date(post.createdAt).toLocaleString()}</Text>
+                </Paper>
             </List.Item>
         ))}
         </List>
