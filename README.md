@@ -52,7 +52,18 @@ rm -rf app
 cp -R ../my-old-remix-app/app app
 ```
 
-Populate the tables in prisma
+Install Mantine Form:
+```
+npm install @mantine/form 
+```
+
+Install & Init prisma:
+```
+npm i prisma @prisma/client
+npx prisma init --datasource-provider sqlite
+```
+
+Populate the tables in prisma:
 ```
 npx prisma generate
 npx prisma db push
