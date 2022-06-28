@@ -52,7 +52,7 @@ rm -rf app
 cp -R ../my-old-remix-app/app app
 ```
 
-Populate the table
+Populate the tables in prisma
 ```
 npx prisma generate
 npx prisma db push
