@@ -18,3 +18,4 @@ lerna-debug.log
 /tmp
 /prisma/*.db
 .env
+/public/build
