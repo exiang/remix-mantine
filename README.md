@@ -51,3 +51,10 @@ rm -rf app
 # copy your app over
 cp -R ../my-old-remix-app/app app
 ```
+
+Populate the table
+```
+npx prisma generate
+npx prisma db push
+node prisma/seed
+```
