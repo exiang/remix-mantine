@@ -9,6 +9,7 @@ export default function Index() {
 
       <List spacing="md" listStyleType="none">
         <List.Item><Link to="/mantine"><Button size="xs">Mantine</Button></Link> Demo all mantine core components</List.Item>
+        <List.Item><Link to="/api/sum?num1=100&num2=99"><Button size="xs">Sum (GET)</Button></Link> Demo for API that sum 2 numbers thru GET request</List.Item>
         <List.Item><Link to="/posts"><Button size="xs">Blog</Button></Link> Blog Demo</List.Item>
       </List>
     </>
