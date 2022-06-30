@@ -1,10 +1,12 @@
 import {Link}  from "@remix-run/react";
+import { LinksFunction } from "@remix-run/node"; 
 
 import { Container, MantineProvider, Button, Title } from '@mantine/core';
 import { NotificationsProvider } from '@mantine/notifications';
 import { ModalsProvider } from '@mantine/modals';
 
 import {HeaderResponsive} from './components/HeaderResponsive/HeaderResponsive'
+import styles from "./tailwind.css";
 
 import {
   Links,
@@ -20,6 +22,10 @@ export const meta = () => ({
   title: "New Remix App",
   viewport: "width=device-width,initial-scale=1",
 });
+
+export const links = () => [
+  { rel: "stylesheet", href: styles },
+];
 
 export default function App() {
   return (

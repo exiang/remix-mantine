@@ -19,3 +19,4 @@ lerna-debug.log
 /prisma/*.db
 .env
 /public/build
+/app/tailwind.css
