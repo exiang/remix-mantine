@@ -41,7 +41,7 @@ function Document({children, title}){
   return (
     <MantineProvider theme={{ colorScheme: 'dark' }} withGlobalStyles withNormalizeCSS>
       <NotificationsProvider><ModalsProvider>
-      <html lang="en">
+      <html lang="en" className="tw-dark">
         <head>
           <title>{title}</title>
           <Meta />
