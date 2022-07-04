@@ -17,3 +17,11 @@ model Post{
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+
+model User {
+  id           String   @id @default(uuid())
+  username     String   @unique // also email
+  passwordHash String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}

@@ -77,7 +77,7 @@ export default function Login() {
         {(loaderData?.error?.message?.length)?<Alert color="red" mb="lg">{loaderData?.error?.message}</Alert>:''}
 
         <TextInput name="email" label="Email" placeholder="exiang83@yahoo.com" required />
-        <PasswordInput name="password" label="Password" placeholder="123456" required mt="md" />
+        <PasswordInput name="password" label="Password" placeholder="twixrox" required mt="md" />
         <Group position="apart" mt="md">
           <Checkbox label="Remember me" />
           <Anchor<'a'> onClick={(event) => event.preventDefault()} href="#" size="sm">

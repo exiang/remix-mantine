@@ -3,6 +3,15 @@ const db = new PrismaClient()
 
 async function seed()
 {
+    const kody = await db.user.create({
+        data: {
+          username: "exiang83@yahoo.com",
+          // this is a hashed version of "twixrox"
+          passwordHash:
+            "$2b$10$K7L1OJ45/4Y2nIvhRVpCe.FSmhDdWoXehVzJptJ/op0lSsvqNu/1u",
+        },
+      });
+
     await Promise.all(getPosts().map(post=>{
         return db.post.create({data: post})
     }))

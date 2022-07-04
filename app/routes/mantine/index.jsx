@@ -2,7 +2,7 @@ import { Title, Space, Text, Group, Button, Notification } from '@mantine/core';
 import { showNotification } from '@mantine/notifications';
 import { useModals } from '@mantine/modals';
 
-export default function Mantine() {
+export default function MantineIndex() {
     const modals = useModals();
 
     const openConfirmModal = () => modals.openConfirmModal({

@@ -2,6 +2,9 @@ import { Authenticator, AuthorizationError } from "remix-auth";
 import { FormStrategy } from "remix-auth-form";
 import { sessionStorage } from "~/services/session.server";
 import { User } from "~/models/user";
+import bcrypt from "bcryptjs";
+
+import { db } from "~/utils/db.server";
 
 // Create an instance of the authenticator, pass a generic with what
 // strategies will return and will store in the session
@@ -17,8 +20,6 @@ authenticator.use(
         let email = form.get("email") as string; // or email... etc
         let password = form.get("password") as string;
 
-        let user = null;
-
         if(!email || email?.length ===0) throw new AuthorizationError("Bad Credential: Email is required");
         if(typeof(email) !== 'string')
         {
@@ -31,7 +32,26 @@ authenticator.use(
         throw new AuthorizationError("Bad Credential: Password must be string");
         }
 
-        if(email === 'exiang83@yahoo.com' && password === '123456')
+        let returnUser = null;
+        
+        const user = await db.user.findUnique({
+            where: { username: email },
+          });
+          if (!user) return null;
+
+        const isCorrectPassword = await bcrypt.compare(password, user.passwordHash);
+        if (!isCorrectPassword)
+        {
+            throw new AuthorizationError("Bad Credential");
+        }
+        else
+        {
+            returnUser = {name: email, token: `${password}-${new Date().getTime()}`};
+            return await Promise.resolve({...returnUser});
+        }
+        
+        
+        /*if(email === 'exiang83@yahoo.com' && password === 'twixrox')
         {
         user = {name: email, token: `${password}-${new Date().getTime()}`};
 
@@ -41,7 +61,7 @@ authenticator.use(
         else
         {
         throw new AuthorizationError("Bad Credential");
-        }
+        }*/
 
         
     })
