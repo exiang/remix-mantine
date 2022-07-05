@@ -73,6 +73,7 @@ node prisma/seed
 ```
 
 Pass state from parent to child in nested route
+
 `parent.jsx`
 ```
 import { useState } from "react";
