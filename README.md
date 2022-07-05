@@ -81,7 +81,7 @@ import { useState } from "react";
 export default function Parent(){
     const [theUrl, setTheUrl] = useState("http://www.yeesiang.com");
     const [theBrand, setTheBrand] = useState('YS');
-    const context = { theUrl, theBrand };
+    const context = { theUrl, setTheUrl, theBrand, setTheBrand };
 
     return (<>
         <TextInput placeholder="Insert URL here" value={theUrl} onChange={(event) => setTheUrl(event.currentTarget.value)} ></TextInput>
@@ -96,9 +96,9 @@ export default function Parent(){
 import {useOutletContext} from "@remix-run/react";
 export default function Child(){
 
-    const {theUrl, theBrand} = useOutletContext();
+    const {theUrl, setTheUrl, theBrand, setTheBrand} = useOutletContext();
     
-    return (<>{theUrl} - {theBrand}</>)
+    return (<>Web Analysis: {theUrl} - {theBrand} <Button onClick={() => setTheUrl('http://www.google.com')}>Change URl</Button><Button onClick={() => setTheBrand('TZL')}>Change Brand</Button></>)
 
 }
 ```
