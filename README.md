@@ -93,6 +93,7 @@ export default function Parent(){
 
 `child.jsx`
 ```
+import {useOutletContext} from "@remix-run/react";
 export default function Child(){
 
     const {theUrl, theBrand} = useOutletContext();
