@@ -72,6 +72,36 @@ npx prisma db push
 node prisma/seed
 ```
 
+Pass state from parent to child in nested route
+`parent.jsx`
+```
+import { useState } from "react";
+
+export default function Parent(){
+    const [theUrl, setTheUrl] = useState("http://www.yeesiang.com");
+    const [theBrand, setTheBrand] = useState('YS');
+    const context = { theUrl, theBrand };
+
+    return (<>
+        <TextInput placeholder="Insert URL here" value={theUrl} onChange={(event) => setTheUrl(event.currentTarget.value)} ></TextInput>
+        <TextInput placeholder="Insert Brand here" value={theBrand} onChange={(event) => setTheBrand(event.currentTarget.value)} ></TextInput>
+        <Outlet context={context} />
+    </>)
+}
+```
+
+`child.jsx`
+```
+export default function Child(){
+
+    const {theUrl, theBrand} = useOutletContext();
+    
+    return (<>{theUrl} - {theBrand}</>)
+
+}
+```
+However, I still havent figured out how to pass from child to parent.
+
 ### The .env
 Use the following sample code to init .env
 ```
