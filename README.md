@@ -54,25 +54,26 @@ cp -R ../my-old-remix-app/app app
 
 
 ### How to
-Install Mantine Form:
+#### Install Mantine Form:
 ```
 npm install @mantine/form 
 ```
 
-Install & Init prisma:
+#### Install & Init prisma:
 ```
 npm i prisma @prisma/client
 npx prisma init --datasource-provider sqlite
 ```
 
-Populate the tables in prisma:
+#### Populate the tables in prisma:
 ```
 npx prisma generate
 npx prisma db push
 node prisma/seed
 ```
 
-Pass state from parent to child in nested route
+#### Pass state from parent to child in nested route:
+You can pass multiple state back and forth between nested route back and forth by using `useOutletContext()`.
 
 `parent.jsx`
 ```
@@ -102,7 +103,7 @@ export default function Child(){
 
 }
 ```
-However, I still havent figured out how to pass from child to parent.
+
 
 ### The .env
 Use the following sample code to init .env
