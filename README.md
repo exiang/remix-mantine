@@ -126,5 +126,5 @@ DATABASE_URL="file:./dev.db"
 ### Login
 You may use the following user account to test:
 
-username: exiang83@yahoo.com
-password: twixrox
+  * username: exiang83@yahoo.com
+  * password: twixrox
