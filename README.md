@@ -72,6 +72,12 @@ npx prisma db push
 node prisma/seed
 ```
 
+Every update to the database schema will required to repopulate the tables. Also not to forget restart the server with `npm run dev`.
+
+#### database editor
+a handy web base database viewer/editor
+`npx prisma studio`
+
 #### Pass state from parent to child in nested route:
 You can pass multiple state back and forth between nested route back and forth by using `useOutletContext()`.
 
@@ -116,3 +122,9 @@ Use the following sample code to init .env
 
 DATABASE_URL="file:./dev.db"
 ```
+
+### Login
+You may use the following user account to test:
+
+username: exiang83@yahoo.com
+password: twixrox
