@@ -78,6 +78,30 @@ Every update to the database schema will required to repopulate the tables. Also
 a handy web base database viewer/editor
 `npx prisma studio`
 
+#### Form in Modal
+form can be open in modal thru route, e.g.: `index.jsx`
+```
+<Button component={Link} to="profile">Open Profile</Button>
+```
+
+the route `profile.jsx` just need to return modal
+```
+return ( <>
+        <Modal
+        opened={opened}
+        onClose={() => {setOpened(false); navigate("/cpanel");}}
+        title="My Profile"
+        >
+            <Form method="post">
+            <fieldset className="tw-border-none" disabled={transition.state === "submitting"}>
+                <TextInput name="fullname" placeholder="How we should address you?" label="Full name" value={actionData?.values.fullname ?actionData?.values.fullname : loaderData?.values.fullname} error={actionData?.errors?.fullname} required />
+                <Button type="submit">{transition.state === "submitting"? "Sending...": "Send"}</Button>
+            </fieldset>
+            </Form>
+        </Modal>
+    </>)
+```
+
 #### Pass state from parent to child in nested route:
 You can pass multiple state back and forth between nested route back and forth by using `useOutletContext()`.
 
