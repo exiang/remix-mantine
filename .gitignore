@@ -20,3 +20,4 @@ lerna-debug.log
 .env
 /public/build
 /app/tailwind.css
+public/build

@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["browser-route-module:/Users/yeesiang/testbase/remix-mantine/app/routes/mantine.jsx?browser", "../../../app/routes/mantine.jsx"],
-  "sourcesContent": ["export { default } from \"/Users/yeesiang/testbase/remix-mantine/app/routes/mantine.jsx\";", "import { Group, Button, Notification } from '@mantine/core';\nimport { showNotification } from '@mantine/notifications';\n\nexport default function Mantine() {\n    return (\n      <>\n        <h1>Mantine</h1>\n        \n        <h2>Buttons</h2>\n        <Button>Hello world!</Button>\n        \n        <h2>Notifications</h2>\n        <Notification title=\"We notify you that\">\n        You are now obligated to give a star to Mantine project on GitHub\n        </Notification>\n\n        <Group position=\"center\">\n        <Button\n            variant=\"outline\"\n            onClick={() =>\n            showNotification({\n                title: 'Default notification',\n                message: 'Hey there, your code is awesome! \uD83E\uDD25',\n            })\n            }\n        >\n            Show notification\n        </Button>\n        </Group>\n      </>\n    );\n  }\n  "],
-  "mappings": ";;;;;;;;;;;;;AAAA;;;ACAA;AAGe,mBAAmB;AAC9B,SACE,0DACE,oCAAC,MAAD,MAAI,YAEJ,oCAAC,MAAD,MAAI,YACJ,oCAAC,QAAD,MAAQ,iBAER,oCAAC,MAAD,MAAI,kBACJ,oCAAC,cAAD;AAAA,IAAc,OAAM;AAAA,KAAqB,sEAIzC,oCAAC,OAAD;AAAA,IAAO,UAAS;AAAA,KAChB,oCAAC,QAAD;AAAA,IACI,SAAQ;AAAA,IACR,SAAS,MACT,iBAAiB;AAAA,MACb,OAAO;AAAA,MACP,SAAS;AAAA;AAAA,KAGhB;AAAA;",
-  "names": []
-}
