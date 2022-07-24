@@ -9,12 +9,12 @@ export let loader = async ({ request }) => {
 };
 
 
-export default function DataLoader() {
+export default function LoaderData() {
   const loaderData = useLoaderData();
 
   return (
     <>
-        <Title order={1}>Data Loader</Title>
+        <Title order={1}>Loader Data</Title>
         <Space h="lg" />
 
         <Title order={2}>Loader from Route</Title>
