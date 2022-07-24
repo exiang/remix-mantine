@@ -133,9 +133,9 @@ function ActionData(){
             }
 
             <Space h="lg" />
-            <Title order={2}>Sum with direct API (POST)</Title>
+            <Title order={2}>Sum with direct API (GET & POST)</Title>
             <Text>Call an internal POST API: `api/sum1` without using proxied action function. This has to use the `fetcher` feature in REMIX.</Text>
-            <Text>It also demo how to use fetcher to call loader data of an internal GET API upon initialization.</Text>
+            <Text>It also demo how to use fetcher to call loader data of an internal GET API: `api/sum` upon initialization.</Text>
             <Text>used process.env.Base_URL, eg: https://3000-exiang-remixmantine-t6bkzxdz0hf.ws-us54.gitpod.io/</Text>
             <fetcher.Form  method="post" action="/api/sum1">
                 <fieldset disabled={transition5.state === "submitting" || transition5.state === 'loading'} style={{border:'none'}}>
