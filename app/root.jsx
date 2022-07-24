@@ -40,7 +40,7 @@ export default function App() {
 function Document({children, title}){
   return (
     <MantineProvider theme={{ colorScheme: 'dark' }} withGlobalStyles withNormalizeCSS>
-      <NotificationsProvider><ModalsProvider>
+      
       <html lang="en" className="tw-dark">
         <head>
           <title>{title}</title>
@@ -48,13 +48,15 @@ function Document({children, title}){
           <Links />
         </head>
         <body>
+          <NotificationsProvider><ModalsProvider>
           {children}
+          </ModalsProvider></NotificationsProvider>
           <ScrollRestoration />
           <Scripts />
           {process.env.NODE_ENV === 'development'?<LiveReload />:null}
         </body>
       </html>
-      </ModalsProvider></NotificationsProvider>
+      
     </MantineProvider>
   )
 }

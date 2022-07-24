@@ -15,10 +15,10 @@ export default function Index() {
         <List.Item><Link to="/posts"><Button size="xs">Blog</Button></Link> Blog Demo</List.Item>
         <List.Item><Link to="/login"><Button size="xs">Login</Button></Link> Traditional login form (hardcoded for now)</List.Item>
         <List.Item><Link to="/dashboard"><Button size="xs">Dashboard</Button></Link> Protected page</List.Item>
-        <List.Item><Link to="/dataLoader"><Button size="xs">Data Loader</Button></Link> Test &amp; demo how data loader works</List.Item>
         <List.Item><Link to="/sendMail"><Button size="xs">Sendmail</Button></Link> Send email with sendMail() function (env configurable to go thru SMTP or mailgun API)</List.Item>
         <List.Item><Link to="/mailgun"><Button size="xs">Mailgun</Button></Link> Send email with mailgun API</List.Item>
-        <List.Item><Link to="/smtp"><Button size="xs">SMTP</Button></Link> Send email with any SMTP</List.Item>
+        <List.Item><Link to="/loaderData"><Button size="xs">Loader Data</Button></Link> Test &amp; demo how loader data works</List.Item>
+        <List.Item><Link to="/actionData"><Button size="xs">Action Data</Button></Link> Test &amp; demo how action data works</List.Item>
       </List>
     </>
   );

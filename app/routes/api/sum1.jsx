@@ -1,5 +1,6 @@
 import { json, ActionFunction } from "@remix-run/node";
 
+// acquired payload from POST using action
 export let action = async ({ request }) => {
   
   const formData = await request.formData();

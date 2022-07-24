@@ -1,6 +1,7 @@
 import { json, LoaderFunction } from "@remix-run/node"; // or "@remix-run/cloudflare"
 import { useParams } from "@remix-run/react";
 
+// acquired payload from GET using searchParams method in loader
 export let loader: LoaderFunction = async ({ request }) => {
   
   const url = new URL(request.url);
