@@ -19,6 +19,7 @@ export default function Index() {
         <List.Item><Link to="/mailgun"><Button size="xs">Mailgun</Button></Link> Send email with mailgun API</List.Item>
         <List.Item><Link to="/loaderData"><Button size="xs">Loader Data</Button></Link> Test &amp; demo how loader data works</List.Item>
         <List.Item><Link to="/actionData"><Button size="xs">Action Data</Button></Link> Test &amp; demo how action data works</List.Item>
+        <List.Item><Link to="/paginationView"><Button size="xs">Pagination</Button></Link> with <a href="https://mantine.dev/core/pagination/">mantine pagination</a> &amp; mock api from <a href="https://reqres.in/">Reqres.in</a></List.Item>
       </List>
     </>
   );

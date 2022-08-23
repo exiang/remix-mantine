@@ -152,3 +152,7 @@ You may use the following user account to test:
 
   * username: exiang83@yahoo.com
   * password: twixrox
+
+
+### useFetcher
+use to call internal route only
