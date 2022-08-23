@@ -134,6 +134,50 @@ export default function Child(){
 }
 ```
 
+#### Calling multiple API in action
+```
+export let action = async ({ request }) => {
+  
+  const formData = await request.formData();
+  const inputText = formData.get('inputText');
+
+  let result = null;
+
+  try {
+    await Promise.all([
+      fetch(`https://api.com/profile`, {
+        method: 'POST',
+        body: JSON.stringify({
+          text: inputText
+        }),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+      }).then(resultCognitive => resultCognitive.json()),
+      fetch(`https://api.com/classify`, {
+        method: 'POST',
+        body: JSON.stringify({
+          text: inputText
+        }),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+      }).then(resultClassify => resultClassify.json())
+    ]) .then(([cognitive, classify]) => {
+
+      result = {cognitive: cognitive, classify:classify};
+    });
+    
+  }
+  catch(err) {
+    console.log(err);
+  };
+
+
+  console.log(result);
+  return result;
+};
+```
 
 ### The .env
 Use the following sample code to init .env
