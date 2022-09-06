@@ -189,6 +189,12 @@ Use the following sample code to init .env
 # See the documentation for all the connection string options: https://pris.ly/d/connection-strings
 
 DATABASE_URL="file:./dev.db"
+NODE_ENV="development"
+BASE_URL="https://3000-exiang-remixmantine-t6bkzxdz0hf.ws-us54.gitpod.io"
+S3_API_KEY="AKIA4DHA4CZDNRWBACPP"
+S3_API_SECRET="xxxxxxxxxx"
+S3_REGION="us-west-2"
+S3_PUBLIC_BUCKET="exiang-public"
 ```
 
 ### Login
