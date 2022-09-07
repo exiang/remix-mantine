@@ -10,6 +10,8 @@ const uploadStreamToS3 = async (fieldName: string, data: AsyncIterable<Uint8Arra
 
   const s3Client = new S3Client({ 
     region: process.env.S3_REGION,
+    endpoint: process.env.S3_ENDPOINT,
+    version: 'latest',
     credentials: {
       accessKeyId: process.env.S3_API_KEY?.toString(),
       secretAccessKey: process.env.S3_API_SECRET?.toString()
@@ -25,6 +27,7 @@ const uploadStreamToS3 = async (fieldName: string, data: AsyncIterable<Uint8Arra
 
   await s3Client.send(new PutObjectCommand(params));
   
+  console.log("key", key);
   return key;
 }
 
@@ -34,6 +37,8 @@ export const getUrl: string = async (key: string) => {
 
   const s3Client = new S3Client({ 
     region: process.env.S3_REGION,
+    endpoint: process.env.S3_ENDPOINT,
+    version: 'latest',
     credentials: {
       accessKeyId: process.env.S3_API_KEY?.toString(),
       secretAccessKey: process.env.S3_API_SECRET?.toString()

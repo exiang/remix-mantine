@@ -197,6 +197,7 @@ S3_API_KEY="AKIA4DHA4CZDNRWBACPP"
 S3_API_SECRET="xxxxxxxxxx"
 S3_REGION="us-west-2"
 S3_PUBLIC_BUCKET="exiang-public"
+S3_ENDPOINT=""
 ```
 
 ### Login
